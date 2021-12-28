@@ -10,7 +10,7 @@ class FuncProviderUtils
 public:
     int doPlus(int a,int b)
     {
-         // 实际在乘法或者加法时考虑溢出 这里不管..
+        // 实际在乘法或者加法时考虑溢出 这里不管..
         return a+b;
     }
     void printMul(int a,int b);
@@ -45,6 +45,12 @@ int main()
     std::cout<<"changed version3: use default value replace placeholders"<<std::endl;
     doMulWithOneFix(1,4); // 4 * 5 = 20
 }
+
+// 小结
+// 当需要使用成员函数作为“变量”使用时 
+// 1.需要借助bind函数 
+// 2.调用成员函数需要借用到对象 
+// 3.占位符是针对调用方而言，表示将调用方可变参数列表的哪几个参数塞入到被调用成员函数中
 
 
 // reference
