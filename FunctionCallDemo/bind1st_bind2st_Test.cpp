@@ -41,7 +41,7 @@ int main()
 	std::copy(datas.begin(), datas.end(), std::ostream_iterator<int>(std::cout, " ")); // 120 79
 	std::cout << std::endl;
 
-	// 删除掉datas2容器中val > 10的元素,bind2nd的作用是将原本需要俩个参数的less函数的第一个入参绑定为10，另一个参数从容器进入
+	// 删除掉datas2容器中10 > val的元素,bind1st的作用是将原本需要俩个参数的less函数的第一个入参绑定为10，另一个参数从容器进入
 	datas2.erase(std::remove_if(datas2.begin(), datas2.end(), std::bind1st(std::less<int>(), 10)), datas2.end());
 	std::copy(datas2.begin(), datas2.end(), std::ostream_iterator<int>(std::cout, " ")); // 1 2 4 5 8
 	std::cout << std::endl;
