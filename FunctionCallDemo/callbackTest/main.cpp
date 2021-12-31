@@ -11,6 +11,6 @@ int main()
 {
     A a;
     a.doTask();
-    system("pause");
+    std::cout<<"Hello"<<std::endl;
 }
  

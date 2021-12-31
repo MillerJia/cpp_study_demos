@@ -14,9 +14,4 @@ private:
     std::unique_ptr<B> pB{nullptr};
 };
 
-void A::doneWork()
-{
-    std::cout<<"A 已收到 B做完工作的通知"<<std::endl;
-}
-
 #endif
