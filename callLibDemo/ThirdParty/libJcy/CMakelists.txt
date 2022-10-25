@@ -1,0 +1,12 @@
+#message("this is third party")
+include_directories(include)
+
+# 设置输出目录
+
+project(third_party_lib)
+
+file(GLOB_RECURSE SRC_LIST "src/*.c")
+
+message("src list " ${SRC_LIST})
+
+add_library(${PROJECT_NAME} STATIC ${SRC_LIST})
