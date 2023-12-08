@@ -1,0 +1,26 @@
+cmake_minimum_required(VERSION 3.27)
+
+set(CMAKE_MAKE_PROGRAM D:/programs/llvm/mingw-ucrt-64/bin/make.exe)
+set(CMAKE_C_COMPILER D:/programs/llvm/mingw-ucrt-64/bin/gcc.exe)
+set(CMAKE_CXX_COMPILER D:/programs/llvm/mingw-ucrt-64/bin/g++.exe)
+
+project(gslTest LANGUAGES CXX)
+
+# Set C++ standard
+
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+# Find GSL package
+find_package(GSL REQUIRED)
+
+# Add your source files
+set(SOURCE_FILES
+    gsl_test.cpp
+)
+
+# Add the executable
+add_executable(gslTest ${SOURCE_FILES})
+
+# Link GSL library
+target_link_libraries(gslTest GSL::gsl GSL::gslcblas)

@@ -15,7 +15,8 @@ public:
   void dealSomeData() {
     std::call_once(init_resource_flag, &X::initResource, this); // 用于确保处理资源之前，资源已经初始化，且只初始化一次（支持多线程）
     // std::call_once(init_resource_flag, y1);
-    std::cout << "deal data" << *(resource_id_ptr_.get()) << std::endl;
+    std::string x = "123";
+    std::cout << "\x1B[32mdeal data\x1B[0m" << *(resource_id_ptr_.get()) << std::endl;
   }
 private:
   void initResource() {

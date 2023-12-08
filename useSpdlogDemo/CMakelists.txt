@@ -1,0 +1,20 @@
+cmake_minimum_required(VERSION 3.20)
+
+project(logdemo LANGUAGES CXX)
+
+set(THIRD_PARTY_PATH ${CMAKE_SOURCE_DIR}/../../third_party)
+
+set(CMAKE_PREFIX_PATH ${THIRD_PARTY_PATH}/spdlog/lib/cmake)
+
+message("third party path = ${THIRD_PARTY_PATH}")
+
+#spdlog_FOUND bool值表示是否找到了
+find_package(spdlog REQUIRED)
+
+include_directories(${THIRD_PARTY_PATH}/spdlog/include)
+
+link_directories(${THIRD_PARTY_PATH}/spdlog/lib)
+
+add_executable(${PROJECT_NAME} main.cpp)
+
+target_link_libraries(${PROJECT_NAME} PRIVATE spdlog)
