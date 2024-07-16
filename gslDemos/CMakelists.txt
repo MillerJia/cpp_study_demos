@@ -16,8 +16,9 @@ find_package(GSL REQUIRED)
 
 # Add your source files
 set(SOURCE_FILES
-    gsl_test.cpp
-)
+   # gsl_test.cpp
+    gsl_test_gauss_pickpoints.cpp
+    )
 
 # Add the executable
 add_executable(gslTest ${SOURCE_FILES})

@@ -4,11 +4,14 @@
 
 int main()
 {
-    std::cout << a << std::endl;
-    std::cout << b << std::endl;
+    // std::cout << a << std::endl;
+    // std::cout << b << std::endl;
 
-    func2();
+   // func2();
 
-    std::cout << a << std::endl;
-    std::cout << b << std::endl;
+    // std::cout << a << std::endl;
+    // std::cout << b << std::endl;
+    const int *a = new int(5);
+    a = new int(6);
+    *a = 6;
 }
